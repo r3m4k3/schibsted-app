@@ -3,7 +3,7 @@ DESCRIPTION:
 
 REST API:
 * with format agnostic - format depends on HTTP header - Content-Type
-* agnostic database persistence (now implemented only Doctrine ORM)
+* agnostic DAL database persistence (now implemented only Doctrine ORM)
 * 2nd level of Richardson Maturity Level
 * unit tests
 * secured with JWT.
