@@ -1,0 +1,15 @@
+client_get_places:
+  path: /
+  defaults: { _controller: AppBundle:Default:getPlaces }
+
+client_get_place:
+  path: /get/{id}
+  defaults: { _controller: AppBundle:Default:getPlaceById }   
+
+client_get_saved_places:
+  path: /saved/get
+  defaults: { _controller: AppBundle:Default:getSavedPlaces }
+
+client_get_places_by_location:
+  path: /get/by-location/{id}
+  defaults: { _controller: AppBundle:Default:getPlacesByPlaceId }                    

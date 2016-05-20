@@ -1,0 +1,32 @@
+api_login_check:
+    path: /api/login_check
+
+api_get_places:
+  path:  /api/places
+  defaults: { _controller: ApiBundle:Place:all, _format: ~ }
+  methods: [GET]
+
+api_get_place:
+  path:  /api/places/{id}
+  defaults: { _controller: ApiBundle:Place:get, _format: ~ }
+  methods: [GET]  
+
+api_get_saved_places:
+  path:  /api/saved_places
+  defaults: { _controller: ApiBundle:SavedPlace:all, _format: ~ }
+  methods: [GET]      
+
+api_get_saved_place:
+  path:  /api/saved_places/{id}
+  defaults: { _controller: ApiBundle:SavedPlace:get, _format: ~ }
+  methods: [GET]
+
+api_save_new_place:
+  path:  /api/saved_places
+  defaults: { _controller: ApiBundle:SavedPlace:new, _format: ~ }
+  methods: [POST]
+
+api_delete_saved_place:
+  path:  /api/saved_places/{id}
+  defaults: { _controller: ApiBundle:SavedPlace:remove, _format: ~ }
+  methods: [DELETE]

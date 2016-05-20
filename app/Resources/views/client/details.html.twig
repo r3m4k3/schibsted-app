@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ place.name }}{% endblock %}
+{% block content %}
+
+<br /><br /><br /><br />
+ Name: {{ place.name }}<br />
+ Address: {{ place.address }}<br />
+ Location: {{ place.location.latitude }}, 
+ 		   {{ place.location.longitude }}
+
+{% endblock %}

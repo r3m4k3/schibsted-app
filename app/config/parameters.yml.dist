@@ -1,0 +1,17 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: schibsted
+    database_user: root
+    database_password: root
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 30ba69fbbb677dcf87df90b22ad9b9852c7efc93
+    google_places_api_key: AIzaSyD-Q89Tcwh9LUZAaHel9ctco4Fp1-ELAE8
+    jwt_private_key_path: %kernel.root_dir%/var/jwt/private.pem   # ssh private key path
+    jwt_public_key_path:  %kernel.root_dir%/var/jwt/public.pem    # ssh public key path
+    jwt_key_pass_phrase:  'test'                                      # ssh key pass phrase
+    jwt_token_ttl:        86400

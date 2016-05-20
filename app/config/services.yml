@@ -1,0 +1,10 @@
+services:
+  coordinates_manager:
+    class: ApiBundle\Service\CoordinatesManager
+    arguments: ["@doctrine.orm.entity_manager"]
+  google_details.api:
+    class: ApiBundle\Service\GoogleAPIDetailsManager
+    arguments: ["%google_places_api_key%", "@circle.restclient"]
+  google_near_by_search.api:
+    class: ApiBundle\Service\GoogleAPINearBySearchManager
+    arguments: ["%google_places_api_key%", "@circle.restclient"]         

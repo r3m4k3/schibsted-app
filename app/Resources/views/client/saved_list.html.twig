@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}Saved objects{% endblock %}
+{% block content %}
+    <h1>Saved objects</h1>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th>No</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% if places is not empty %}
+            {% for place in places %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    <a href="{{ url('client_get_places_by_location', {'id': place.id }) }}">{{ place.latitude }}, {{ place.longitude }}</a>
+                </td>
+                <td>
+                        <span id="{{ place.id }}" class="glyphicon glyphicon-remove remove" aria-hidden="true"></span>  
+                </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+             <tr>
+                <td colspan="3">Empty table. </td>
+             </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <br />
+    {% block javascripts %}
+    {{ parent() }}
+    <script>
+    $(document).ready(function() {
+        $(".remove").click(function(event) {
+            event.preventDefault();
+            var id = event.target.id;
+            remove(id);
+        });
+        function remove(id)
+        {
+            var url = "{{ url('api_delete_saved_place', { 'id': "id" }) }}";
+            url = url.replace("id", id);
+            $.ajax({
+                url: url,
+                beforeSend: function(request){
+                    getToken();
+                    request.setRequestHeader('Authorization', 'Bearer ' + token);
+                },
+                dataType: 'json',
+                type: 'DELETE',
+                success: function(response) {
+                    location.reload();
+                },
+                error: function(response) {
+                    //console.log(response);
+                }
+            });
+        };
+    });
+    </script>
+    {% endblock %}
+{% endblock %}

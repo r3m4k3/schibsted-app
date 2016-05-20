@@ -1,0 +1,12 @@
+ApiBundle\Entity\Coordinates:
+    type: entity
+    table: coordinates
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        latitude:
+            type: float
+        longitude:
+            type: float    
