@@ -1,4 +1,6 @@
 DESCRIPTION:
+
+
 REST API:
 * with format agnostic - format depends on HTTP header - Content-Type
 * agnostic database persistence (now implemented only Doctrine ORM)
