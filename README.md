@@ -12,6 +12,12 @@ CLIENT - very simple app made with jQuery, Twig and Symfony3.
 
 CONFIGURATION:
 
+/* Added on 22.05 */
+After composer install you have to change permissions to dirs var/cache/*, var/logs/*, var/sessions/* to 777.
+You need too to create folder app/var/jwt (mkdir -p app/var/jwt from root dir).
+I'm really sorry about this.
+/* */
+
 1. composer install
 2. Set your database configuration parameters.
 3. Import database schema (database.sql).
